@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     @IBAction func clearButtonAction(_ sender: Any) {
         settingTime.setTitle("", for: .normal)
         alarmSwitcher.setOn(false, animated: true)
+        setupSettingTimeButton()
     }
 
 
@@ -45,6 +46,13 @@ class ViewController: UIViewController {
     
     func setupSettingTimeButton() {
         settingTime.isUserInteractionEnabled = false
+        if alarmSwitcher.isOn {
+            settingTime.titleLabel?.textColor = .white
+            settingTime.isEnabled = true
+        } else {
+            settingTime.titleLabel?.textColor = .gray
+            settingTime.isEnabled = false
+        }
     }
     
     @IBAction func switchAction(_ sender: UISwitch) {
