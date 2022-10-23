@@ -27,6 +27,7 @@ class ViewController: UIViewController {
 
     @IBAction func clearButtonAction(_ sender: Any) {
         settingTime.setTitle("", for: .normal)
+        alarmSwitcher.setOn(false, animated: true)
     }
 
 
