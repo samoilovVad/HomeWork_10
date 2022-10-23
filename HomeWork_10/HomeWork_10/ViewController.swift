@@ -19,17 +19,55 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupClearButton()
+        setupSettingTimeButton()
+        setupVolumeSlider()
+        setupProgressView()
     }
 
-    @IBAction func clearButtonAction(_ sender: Any) {}
+    @IBAction func clearButtonAction(_ sender: Any) {
+        settingTime.setTitle("", for: .normal)
+    }
 
-    @IBAction func isAlarmOn(_ sender: Any) {}
 
-    @IBAction func setTimeButton(_ sender: Any) {}
+    @IBAction func setTimeButton(_ sender: Any) {
+        let format = DateFormatter()
+        format.dateFormat = "HH:mm"
+        let time = format.string(from: timePicker.date)
+        settingTime.setTitle("\(time)", for: .normal)
+    }
     
     @IBAction func setVolume(_ sender: Any) {
         progressView.progress = sliderVolume.value
         volumeTextField.text = String(format: "%.1f", sliderVolume.value)
+    }
+    
+    func setupSettingTimeButton() {
+        settingTime.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func switchAction(_ sender: UISwitch) {
+        if sender.isOn {
+            settingTime.titleLabel?.textColor = .white
+            settingTime.isEnabled = true
+        } else {
+            settingTime.titleLabel?.textColor = .gray
+            settingTime.isEnabled = false
+        }
+        setupClearButton()
+    }
+    
+    func setupClearButton() {
+        clearButton.isEnabled = alarmSwitcher.isOn
+    }
+    
+    func setupVolumeSlider() {
+        sliderVolume.thumbTintColor = .red
+        sliderVolume.tintColor = .lightGray
+    }
+    
+    func setupProgressView() {
+        progressView.tintColor = .red
     }
 }
 
