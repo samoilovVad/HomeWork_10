@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet var volumeLevel: UILabel!
-    @IBOutlet var progressView: UIProgressView!
-    @IBOutlet var sliderVolume: UISlider!
-    @IBOutlet var volumeTextField: UITextField!
-    @IBOutlet var timePicker: UIDatePicker!
-    @IBOutlet var settingTime: UIButton!
-    @IBOutlet var alarmSwitcher: UISwitch!
-    @IBOutlet var clearButton: UIButton!
+final class ViewController: UIViewController {
+    @IBOutlet private var volumeLevel: UILabel!
+    @IBOutlet private var progressView: UIProgressView!
+    @IBOutlet private var sliderVolume: UISlider!
+    @IBOutlet private var volumeTextField: UITextField!
+    @IBOutlet private var timePicker: UIDatePicker!
+    @IBOutlet private var settingTime: UIButton!
+    @IBOutlet private var alarmSwitcher: UISwitch!
+    @IBOutlet private var clearButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
