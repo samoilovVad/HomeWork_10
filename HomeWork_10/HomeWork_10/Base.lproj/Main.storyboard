@@ -114,7 +114,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-eW-zBV">
                                                 <rect key="frame" x="217" y="0.0" width="51" height="30"/>
                                                 <connections>
-                                                    <action selector="isAlarmOn:" destination="BYZ-38-t0r" eventType="valueChanged" id="78v-D7-Dek"/>
+                                                    <action selector="switchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fdi-WF-DUy"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoZ-HY-Qfh">
